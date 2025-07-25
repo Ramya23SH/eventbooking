@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services - Classic Events</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Classic Events Logo" />
+    <h1>My Events</h1>
+    <p>Your Dream Event, Our Mission</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="gallery.html">Events</a>
+      <a href="book.html">Book Us</a>
+      <a href="thankyou.html">Thank You</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services-section">
+      <h2>Our Services</h2>
+      <div class="services-list">
+        <div class="service-box" onclick="openModal('wedding')">
+          <i class="fas fa-ring"></i>
+          <h3>Weddings</h3>
+          <p>We make your big day unforgettable.</p>
+        </div>
+        <div class="service-box" onclick="openModal('birthday')">
+          <i class="fas fa-birthday-cake"></i>
+          <h3>Birthday Parties</h3>
+          <p>Colorful & customized birthday celebrations.</p>
+        </div>
+        <div class="service-box" onclick="openModal('corporate')">
+          <i class="fas fa-briefcase"></i>
+          <h3>Corporate Events</h3>
+          <p>Professional setups for meetings & launches.</p>
+        </div>
+        <div class="service-box" onclick="openModal('venue')">
+          <i class="fas fa-archway"></i>
+          <h3>Venue & Decor</h3>
+          <p>Elegant themes & stunning decorations.</p>
+        </div>
+        <div class="service-box" onclick="openModal('support')">
+          <i class="fas fa-headset"></i>
+          <h3>Event Support</h3>
+          <p>On-site staff to ensure smooth execution.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Events. All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modal-body">
+        <!-- Dynamic content inserted via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modalData = {
+      wedding: {
+        title: "Wedding Planning",
+        images: ["images/wed1.jpg", "images/wed2.jpg", "images/wed3.jpg"],
+        description: "We offer complete wedding planning, from engagement to reception. Let us create magic!",
+      },
+      birthday: {
+        title: "Birthday Parties",
+        images: ["images/bday1.jpg", "images/bday2.jpg"],
+        description: "Themed birthdays for all ages! Balloons, games, cakes, and tons of fun!",
+      },
+      corporate: {
+        title: "Corporate Events",
+        images: ["images/corp1.jpg", "images/corp2.jpg"],
+        description: "Professional ambiance for seminars, product launches, and annual meets.",
+      },
+      venue: {
+        title: "Venue & Decor",
+        images: ["images/decor1.jpg", "images/decor2.jpg"],
+        description: "We decorate your event with modern, classy, or traditional themes.",
+      },
+      support: {
+        title: "Event Support",
+        images: ["images/support1.jpg"],
+        description: "Our experienced staff is there to support, coordinate, and manage everything.",
+      }
+    };
+
+    function openModal(type) {
+      const data = modalData[type];
+      const modalBody = document.getElementById("modal-body");
+
+      const imgHtml = data.images.map(img => `<img src="${img}" alt="" class="modal-img">`).join("");
+
+      modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        <div class="modal-gallery">${imgHtml}</div>
+        <p>${data.description}</p>
+        <a href="book.html" class="book-btn">Book Now</a>
+      `;
+
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>

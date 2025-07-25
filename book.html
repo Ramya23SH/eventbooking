@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Us - Classic Events</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .booking-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f1f1fc;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .booking-form h2 {
+      margin-bottom: 20px;
+      color: #3b3b98;
+    }
+
+    .booking-form label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .booking-form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background-color: #3b3b98;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background-color: #5f5fc4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Classic Events Logo" />
+    <h1>My Events</h1>
+    <p>Your Dream Event, Our Mission</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Events</a>
+      <a href="book.html">Book Us</a>
+      <a href="thankyou.html">Thank You</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="booking-form">
+      <h2>Book Your Event</h2>
+      <form action="https://formsubmit.co/youremail@example.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="date">Event Date:</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="type">Event Type:</label>
+        <input type="text" id="type" name="type" placeholder="e.g. Wedding, Party" required />
+
+        <label for="message">Details:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Events. All rights reserved.</p>
+  </footer>
+</body>
+</html>

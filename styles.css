@@ -1,0 +1,291 @@
+/* style.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #1e1e1e;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #3b3b98;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header img {
+  height: 60px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 12px;
+  color: #f4f4f4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+.services ul {
+  list-style: none;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 600px;
+}
+
+.services li {
+  background-color: #e0e0f8;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.cta {
+  margin: 40px 0;
+}
+
+.cta button {
+  background-color: #3b3b98;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cta button:hover {
+  background-color: #5f5fc4;
+}
+
+.poster img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: #3b3b98;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+/* Make body a flex container */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main content grows to take up remaining space */
+main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 100%;
+}
+/* Services Page Styling */
+.services-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.services-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 20px;
+}
+
+.service-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-box i {
+  font-size: 2.5rem;
+  color: #c62828;
+  margin-bottom: 15px;
+}
+
+.service-box h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active nav link */
+nav a.active {
+  border-bottom: 2px solid #c62828;
+}
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  position: relative;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+.close-btn {
+  color: #222;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.modal-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.modal-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #aaa;
+}
+
+.book-btn {
+  display: inline-block;
+  background-color: #ff4b2b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #ff1e00;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { background-color: rgba(0, 0, 0, 0); }
+  to { background-color: rgba(0, 0, 0, 0.7); }
+}
